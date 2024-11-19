@@ -1,0 +1,17 @@
+Classe Produto:
+Atributos:
+- id: inteiro
+- nome: string
+- descricao: string
+- preco: real
+- estoque: inteiro
+
+Métodos:
+função atualizarEstoque(quantidade: inteiro):
+    se quantidade <= estoque:
+        estoque = estoque - quantidade
+    senão:
+        lançar erro("Estoque insuficiente")
+
+função calcularPrecoFinal(desconto: real): real:
+    retorne preco * (1 - desconto)

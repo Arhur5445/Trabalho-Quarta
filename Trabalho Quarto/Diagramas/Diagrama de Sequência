@@ -1,0 +1,10 @@
+Cliente -> Catálogo de Produtos: Buscar Produtos
+Catálogo de Produtos -> Cliente: Exibir lista de produtos
+Cliente -> Carrinho: Adicionar Produto
+Carrinho -> Banco de Dados: Verificar Estoque
+Banco de Dados -> Carrinho: Estoque confirmado
+Carrinho -> Cliente: Exibir Carrinho
+Cliente -> Pagamento: Realizar Checkout
+Pagamento -> Banco de Dados: Processar Transação
+Banco de Dados -> Pagamento: Confirmar Transação
+Pagamento -> Cliente: Compra Concluída

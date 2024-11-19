@@ -1,0 +1,34 @@
+1. Introdução e Objetivos
+O objetivo deste trabalho foi desenvolver uma proposta de arquitetura para um sistema de e-commerce que venda produtos sustentáveis, como itens recicláveis, orgânicos e com baixo impacto ambiental. O sistema deve ser escalável para suportar o crescimento de usuários e transações, e também garantir a segurança e integridade dos dados.
+2. Justificativa da Arquitetura
+Para atender aos requisitos de escalabilidade, modularidade e flexibilidade, a arquitetura escolhida foi a de Microservices. Essa escolha foi feita por várias razões:
+•	Escalabilidade Independente: Como cada serviço é independente, ele pode ser escalado individualmente, permitindo que a plataforma cresça de forma horizontal conforme a demanda aumenta.
+•	Facilidade de Manutenção: A arquitetura de microservices permite que novos desenvolvedores entrem no projeto facilmente, já que o código é dividido em serviços menores e bem definidos.
+•	Desempenho e Flexibilidade: Com microservices, podemos usar tecnologias como Docker e Kubernetes para facilitar a orquestração e a implantação dos serviços, além de garantir flexibilidade no desempenho.
+•	Segurança: Cada serviço pode implementar suas próprias medidas de segurança, como autenticação por JWT para APIs, o que protege a comunicação entre os sistemas.
+3. Estrutura e Funcionamento do Sistema
+O sistema será composto por vários microserviços que se comunicam entre si para oferecer as funcionalidades de e-commerce. Alguns dos principais componentes do sistema são:
+•	Catálogo de Produtos: Responsável por exibir e gerenciar os produtos sustentáveis disponíveis na plataforma.
+•	Carrinho de Compras: Permite aos clientes adicionar, remover produtos e realizar o cálculo do total da compra.
+•	Serviço de Pagamento: Realiza o processamento das transações financeiras.
+•	Banco de Dados: Armazena todas as informações do sistema, como dados dos produtos, usuários e transações.
+•	Cache: Utilizado para armazenar dados frequentemente acessados, como o catálogo de produtos e informações do carrinho, melhorando a performance.
+4. Pseudocódigo das Funções Principais
+A seguir, o pseudocódigo descreve como algumas das principais funções e classes do sistema devem funcionar:
+•	Classe Produto: Gerencia as informações dos produtos, como nome, preço e estoque. Também realiza o cálculo do preço final com base em descontos e atualiza o estoque após cada compra.
+•	Classe Carrinho: Permite ao usuário adicionar ou remover produtos e calcular o total da compra. Ao adicionar um produto, o sistema verifica se há estoque disponível e atualiza o inventário do produto.
+•	Classe Pagamento: Processa o pagamento da compra utilizando diferentes métodos de pagamento e verifica se a transação foi bem-sucedida.
+•	Classe Usuário: Gerencia o login e a autenticação do cliente, permitindo que ele se cadastre, faça login e tenha acesso às funcionalidades da plataforma.
+5. Estratégia de Escalabilidade
+A plataforma será escalada de várias maneiras para garantir que ela possa lidar com um aumento no número de usuários e transações:
+•	Escalabilidade Horizontal: Será possível adicionar novas instâncias de microserviços, permitindo que o sistema cresça de forma flexível. Para isso, será utilizado Docker para containerizar os serviços e Kubernetes para orquestrar e gerenciar esses containers.
+•	Escalabilidade de Banco de Dados: Para garantir que o banco de dados possa lidar com grandes volumes de dados, serão utilizadas técnicas de sharding (particionamento) e replicação para distribuir os dados entre vários servidores e garantir alta disponibilidade.
+•	Cache: O uso de Redis será adotado para melhorar o desempenho, armazenando dados frequentemente acessados, como produtos e itens no carrinho, o que reduz o tempo de resposta e melhora a experiência do usuário.
+6. Segurança
+A segurança do sistema será tratada de maneira abrangente para proteger tanto os dados pessoais dos usuários quanto as transações financeiras. As principais medidas de segurança incluem:
+•	Criptografia de Dados: Todos os dados sensíveis, como senhas e informações de pagamento, serão criptografados. A comunicação entre o cliente e o servidor será protegida por TLS/SSL.
+•	Autenticação e Autorização: Será utilizada autenticação baseada em JWT (JSON Web Tokens) para garantir que apenas usuários autenticados tenham acesso às funcionalidades do sistema.
+•	Conformidade com LGPD e GDPR: A plataforma será desenvolvida de acordo com as leis de proteção de dados, como a LGPD (Lei Geral de Proteção de Dados) e GDPR (Regulamento Geral de Proteção de Dados), garantindo que os usuários tenham controle sobre seus dados pessoais.
+7. Conclusão
+A proposta arquitetural para o sistema de e-commerce sustentável utiliza a arquitetura de microservices para garantir escalabilidade, flexibilidade e facilidade de manutenção. A escolha por essa arquitetura se justifica pela necessidade de lidar com um alto volume de usuários e transações, além de permitir a integração fácil com tecnologias de cloud computing, como Docker e Kubernetes. A segurança foi projetada desde o início, com foco na proteção dos dados dos usuários e nas transações financeiras.
+Essa arquitetura é escalável, o que permite que a plataforma cresça conforme a demanda, e oferece uma base sólida para futuras expansões e melhorias. A documentação detalha as principais decisões de design, o funcionamento das classes e funções principais, bem como a estratégia de escalabilidade e segurança adotada para garantir que o sistema esteja pronto para atender aos desafios do futuro.

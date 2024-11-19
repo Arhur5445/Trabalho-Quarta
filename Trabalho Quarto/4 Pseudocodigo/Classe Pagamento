@@ -1,0 +1,11 @@
+Classe Pagamento:
+Atributos:
+- metodoPagamento: string
+- valor: real
+
+Métodos:
+função processarPagamento(): string:
+    se validarMetodoPagamento(metodoPagamento):
+        retornar "Pagamento aprovado"
+    senão:
+        lançar erro("Falha no pagamento")

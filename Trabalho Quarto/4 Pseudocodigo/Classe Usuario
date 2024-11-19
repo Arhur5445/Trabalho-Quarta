@@ -1,0 +1,13 @@
+Classe Usuario:
+Atributos:
+- id: inteiro
+- nome: string
+- email: string
+- senha: string
+
+Métodos:
+função autenticar(email: string, senha: string): boolean:
+    se email == this.email e senha == this.senha:
+        retornar verdadeiro
+    senão:
+        retornar falso

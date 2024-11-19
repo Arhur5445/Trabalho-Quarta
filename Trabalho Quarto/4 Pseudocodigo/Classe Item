@@ -1,0 +1,8 @@
+Classe Item:
+Atributos:
+- produto: Produto
+- quantidade: inteiro
+
+Métodos:
+função calcularSubtotal(): real:
+    retorne produto.calcularPrecoFinal(0) * quantidade

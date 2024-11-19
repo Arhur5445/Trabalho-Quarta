@@ -1,0 +1,23 @@
+Classe Carrinho:
+Atributos:
+- id: inteiro
+- itens: Lista<Item>
+
+Métodos:
+função adicionarItem(produto: Produto, quantidade: inteiro):
+    se produto.estoque >= quantidade:
+        itens.adicionar(Item(produto, quantidade))
+        produto.atualizarEstoque(quantidade)
+    senão:
+        lançar erro("Estoque insuficiente")
+
+função removerItem(produto: Produto):
+    para cada item em itens:
+        se item.produto == produto:
+            itens.remover(item)
+
+função calcularTotal(): real:
+    total = 0
+    para cada item em itens:
+        total = total + item.calcularSubtotal()
+    retorne total
